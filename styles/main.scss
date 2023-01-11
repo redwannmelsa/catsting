@@ -139,3 +139,44 @@ header {
     .fun-data {}
   }
 }
+
+#race-container {
+  display: flex;
+
+  #race-selector {
+    background-color: $dark;
+    min-width: 417px;
+    min-height: 765px;
+    padding: 21px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .head {
+      display: flex;
+      gap: 20px;
+
+      .title {
+        color: $orange;
+      }
+
+      .results {
+        color: white;
+      }
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+
+      select {
+        width: 203px;
+        background-color: $orange;
+        border: none;
+        color: $dark;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -115,5 +115,38 @@ header .mobile-menu img {
   color: #FF7F57;
   margin: 32px 0;
 }
+#race-container {
+  display: flex;
+}
+#race-container #race-selector {
+  background-color: #1D1D1D;
+  min-width: 417px;
+  min-height: 765px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#race-container #race-selector .head {
+  display: flex;
+  gap: 20px;
+}
+#race-container #race-selector .head .title {
+  color: #FF7F57;
+}
+#race-container #race-selector .head .results {
+  color: white;
+}
+#race-container #race-selector .filters {
+  display: flex;
+  gap: 10px;
+}
+#race-container #race-selector .filters select {
+  width: 203px;
+  background-color: #FF7F57;
+  border: none;
+  color: #1D1D1D;
+  text-align: center;
+}
 
 /*# sourceMappingURL=main.css.map */
