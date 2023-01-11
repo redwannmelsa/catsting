@@ -1,6 +1,12 @@
 @mixin dark-mode {
   background-color: #1D1D1D;
 
+  nav {
+    img {
+      content: url('../assets/light-mode.png');
+    }
+  }
+
   .statistics-card {
     background-color: #343434 !important;
   }
