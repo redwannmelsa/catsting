@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto";
+  overflow: hidden;
+}
+
+header {
+  background-color: #FF7F57;
+  display: flex;
+  height: 66px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+header #logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  padding: 0 20px 0 0;
+}
+header nav {
+  display: none;
+}
+header nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 300px;
+  margin: 0 20px;
+}
+header .mobile-menu img {
+  width: 80%;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .mobile-menu {
+    display: none;
+  }
+
+  header {
+    justify-content: left;
+  }
+  header nav {
+    display: block;
+  }
+}
+#mobile-menu {
+  display: none;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+#mobile-menu a {
+  margin-top: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.statistics-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 100px;
+}
+.statistics-container .statistics-card {
+  min-width: 344px;
+  min-height: 177px;
+  border-radius: 10px;
+  background-color: #1D1D1D;
+  text-align: center;
+}
+.statistics-container .statistics-card .statistics-title {
+  margin-top: 32px;
+  color: #FF7F57;
+  font-size: 18px;
+  font-weight: 700;
+}
+.statistics-container .statistics-card .statistics-value {
+  margin-top: 20px;
+  color: #FFFFFF;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+#fun-fact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#fun-fact button {
+  margin-top: 60px;
+  min-width: 365px;
+  color: #FFFFFF;
+  background-color: #FF7F57;
+  border: none;
+  height: 23px;
+}
+#fun-fact .fun-container {
+  display: flex;
+  flex-direction: column;
+  width: 772px;
+  min-height: 200px;
+  background-color: #EDEDED;
+  margin-top: 20px;
+  text-align: center;
+}
+#fun-fact .fun-container .fun-title {
+  font-size: 17px;
+  color: #FF7F57;
+  margin: 32px 0;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$orange: #FF7F57;
+$light: #FFFFFF;
+$dark: #1D1D1D;
+$grey: #EDEDED;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto';
+  overflow: hidden;
+}
+
+header {
+  background-color: $orange;
+  display: flex;
+  height: 66px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  #logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    padding: 0 20px 0 0;
+  }
+
+  nav {
+    display: none;
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      font-weight: 300px;
+      margin: 0 20px;
+    }
+  }
+
+  .mobile-menu {
+    img {
+      width: 80%;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .mobile-menu {
+    display: none;
+  }
+
+  header {
+    justify-content: left;
+
+    nav {
+      display: block;
+    }
+  }
+}
+
+#mobile-menu {
+  display: none;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+
+  a {
+    margin-top: 30px;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.statistics-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 100px;
+
+
+  .statistics-card {
+    min-width: 344px;
+    min-height: 177px;
+    border-radius: 10px;
+    background-color: $dark;
+    text-align: center;
+
+    .statistics-title {
+      margin-top: 32px;
+      color: $orange;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .statistics-value {
+      margin-top: 20px;
+      color: $light;
+      font-size: 50px;
+      font-weight: 500;
+    }
+  }
+}
+
+#fun-fact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  button {
+    margin-top: 60px;
+    min-width: 365px;
+    color: $light;
+    background-color: $orange;
+    border: none;
+    height: 23px;
+  }
+
+  .fun-container {
+    display: flex;
+    flex-direction: column;
+    width: 772px;
+    min-height: 200px;
+    background-color: $grey;
+    margin-top: 20px;
+    text-align: center;
+
+    .fun-title {
+      font-size: 17px;
+      color: $orange;
+      margin: 32px 0;
+    }
+
+    .fun-data {}
+  }
+}
