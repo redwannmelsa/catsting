@@ -8,14 +8,17 @@ function showMobileDropdown() {
 }
 
 function toggleDarkMode() {
+  console.log(document.cookie)
   console.log(document.cookie === 'darkmode=on')
   if (document.cookie === 'darkmode=on') {
-    document.cookie = 'darkmode=off'
+    document.cookie = 'darkmode=off; path=/'
+    document.querySelector('body').classList.remove('dark-mode')
   } else {
-    document.cookie = 'darkmode=on'
+    document.cookie = 'darkmode=on; path=/'
+    document.querySelector('body').classList.add('dark-mode')
   }
 
-  document.querySelector('body').classList.add('dark-mode')
+
 }
 
 function onInit() {

@@ -56,6 +56,13 @@ header nav a {
   font-weight: 300px;
   margin: 0 20px;
 }
+header nav img {
+  background-color: #FF7F57;
+  border: none;
+  position: absolute;
+  right: 25px;
+  top: 17px;
+}
 header .mobile-menu img {
   width: 80%;
   height: auto;

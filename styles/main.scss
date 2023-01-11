@@ -44,6 +44,14 @@ header {
       font-weight: 300px;
       margin: 0 20px;
     }
+
+    img {
+      background-color: $orange;
+      border: none;
+      position: absolute;
+      right: 25px;
+      top: 17px;
+    }
   }
 
   .mobile-menu {
