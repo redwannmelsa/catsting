@@ -62,20 +62,6 @@ header {
   }
 }
 
-@media (min-width: 900px) {
-  .mobile-menu {
-    display: none;
-  }
-
-  header {
-    justify-content: left;
-
-    nav {
-      display: block;
-    }
-  }
-}
-
 #mobile-dropdown {
   display: none;
   height: 100vh;
@@ -162,13 +148,12 @@ header {
       color: $orange;
       margin: 32px 0;
     }
-
-    .fun-data {}
   }
 }
 
 #race-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 41px;
   max-width: 1600px;
@@ -178,7 +163,7 @@ header {
 
   #race-selector {
     background-color: $dark;
-    min-width: 417px;
+    min-width: 350px;
     max-height: 765px;
     border-radius: 10px;
     padding: 21px;
@@ -244,11 +229,35 @@ header {
   }
 
   #race-display {
+    order: -1;
     background-color: #1D1D1D;
-    width: 772px;
+    min-width: 350px;
+    max-width: 750px;
     height: 254px;
     border-radius: 10px;
     padding: 21px;
     color: white;
+  }
+}
+
+@media (min-width: 900px) {
+  .mobile-menu {
+    display: none;
+  }
+
+  header {
+    justify-content: left;
+
+    nav {
+      display: block;
+    }
+  }
+
+  #race-container {
+    flex-direction: row;
+
+    #race-display {
+      order: 1;
+    }
   }
 }

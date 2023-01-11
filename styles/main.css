@@ -34,6 +34,9 @@
 .dark-mode #race-container .fun-data {
   color: white;
 }
+.dark-mode #race-container #race-display {
+  background-color: #343434;
+}
 
 header {
   background-color: #FF7F57;
@@ -71,18 +74,6 @@ header .mobile-menu img {
   height: auto;
 }
 
-@media (min-width: 900px) {
-  .mobile-menu {
-    display: none;
-  }
-
-  header {
-    justify-content: left;
-  }
-  header nav {
-    display: block;
-  }
-}
 #mobile-dropdown {
   display: none;
   height: 100vh;
@@ -160,8 +151,10 @@ header .mobile-menu img {
   color: #FF7F57;
   margin: 32px 0;
 }
+
 #race-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 41px;
   max-width: 1600px;
@@ -170,7 +163,7 @@ header .mobile-menu img {
 }
 #race-container #race-selector {
   background-color: #1D1D1D;
-  min-width: 417px;
+  min-width: 350px;
   max-height: 765px;
   border-radius: 10px;
   padding: 21px;
@@ -221,12 +214,34 @@ header .mobile-menu img {
   background-color: #FF7F57;
 }
 #race-container #race-display {
+  order: -1;
   background-color: #1D1D1D;
-  width: 772px;
+  min-width: 350px;
+  max-width: 750px;
   height: 254px;
   border-radius: 10px;
   padding: 21px;
   color: white;
+}
+
+@media (min-width: 900px) {
+  .mobile-menu {
+    display: none;
+  }
+
+  header {
+    justify-content: left;
+  }
+  header nav {
+    display: block;
+  }
+
+  #race-container {
+    flex-direction: row;
+  }
+  #race-container #race-display {
+    order: 1;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
