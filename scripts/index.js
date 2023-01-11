@@ -1,10 +1,26 @@
 function showMobileDropdown() {
-  console.log('something')
-  const element = document.querySelector('#mobile-menu');
+  const element = document.querySelector('#mobile-dropdown');
   if (element.style.display === "flex") {
     element.style.display = "none";
   } else {
     element.style.display = "flex";
+  }
+}
+
+function toggleDarkMode() {
+  console.log(document.cookie === 'darkmode=on')
+  if (document.cookie === 'darkmode=on') {
+    document.cookie = 'darkmode=off'
+  } else {
+    document.cookie = 'darkmode=on'
+  }
+
+  document.querySelector('body').classList.add('dark-mode')
+}
+
+function onInit() {
+  if (document.cookie === 'darkmode=on') {
+    document.querySelector('body').classList.add('dark-mode')
   }
 }
 
@@ -64,12 +80,107 @@ async function setNumberOfCatBreeds() {
   document.querySelector('.total-cat-breeds').innerHTML = numberOfCatBreeds
 }
 
-
-
 function setStatistics() {
   setNumberOfCatFacts()
   setNumberOfCatBreeds()
   setMostCommonCoat()
 }
 
-setStatistics()
+onInit()
+
+let catBreeds
+
+async function generateCatBreedListHtml() {
+  catBreeds.data.forEach(cat => {
+    document.querySelector('.race-list').innerHTML += `
+      <div class="race-item" onclick="displayBreedData('${cat.breed}')">
+        <div class="race-content" id="${cat.breed}">${cat.breed}</div>
+      </div>`
+  })
+}
+
+
+// TODO merge both filter functions into one
+function filterByCountry(event) {
+  // clear list
+  document.querySelector('.race-list').innerHTML = ''
+
+  catBreeds.data.forEach(cat => {
+    if (cat.country === event.target.value) {
+      document.querySelector('.race-list').innerHTML += `
+        <div class="race-item" onclick="displayBreedData('${cat.breed}')">
+          <div class="race-content" id="${cat.breed}">${cat.breed}</div>
+        </div>`
+    }
+  })
+}
+
+function filterByCoat(event) {
+  console.log
+  // clear list
+  document.querySelector('.race-list').innerHTML = ''
+
+  catBreeds.data.forEach(cat => {
+    if (cat.coat === event.target.value) {
+      document.querySelector('.race-list').innerHTML += `
+        <div class="race-item" onclick="displayBreedData('${cat.breed}')">
+          <div class="race-content" id="${cat.breed}">${cat.breed}</div>
+        </div>`
+    }
+  })
+}
+
+function getBreedData(selectedBreed) {
+  let breedData
+
+  catBreeds.data.forEach(cat => {
+    if (cat.breed === selectedBreed) {
+      breedData = cat
+    }
+  })
+
+  return breedData
+}
+
+function displayBreedData(selectedBreed) {
+  const breedData = getBreedData(selectedBreed)
+
+  document.querySelector('#race-display').innerHTML = JSON.stringify(breedData)
+}
+
+function generateCountryList() {
+  let countryList = []
+  catBreeds.data.forEach(cat => {
+    if (!countryList.includes(cat.country)) {
+      document.querySelector('#country').innerHTML += `<option value="${cat.country}">${cat.country}</option>`
+    }
+    countryList.push(cat.country)
+  })
+}
+
+function generateCoatList() {
+  let coatList = []
+  catBreeds.data.forEach(cat => {
+    if (!coatList.includes(cat.coat)) {
+      document.querySelector('#fur').innerHTML += `<option value="${cat.coat}">${cat.coat}</option>`
+    }
+    coatList.push(cat.coat)
+  })
+}
+
+async function initRacePage() {
+  catBreeds = await requestCatBreeds()
+  generateCatBreedListHtml()
+  generateCountryList()
+  generateCoatList()
+}
+
+async function getRandomFunFact() {
+  const res = await fetch('https://catfact.ninja/fact?max_length=140')
+  return await res.json()
+}
+
+async function showFunFact() {
+  const funFact = await getRandomFunFact()
+  document.querySelector('.fun-data').innerHTML = funFact.fact
+}

@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="styles/main.css">
-  <script src="./scripts/index.js"></script>
 </head>
 
 <body>
@@ -25,7 +24,11 @@
     </a>
   </header>
 
-  <section id="mobile-menu">
+
+  <section id="mobile-dropdown">
+    <button onclick="toggleDarkMode()">
+      <img src="./assets/dark-mode.png" alt="">
+    </button>
     <a href="./index.html">Accueil</a>
     <a href="./pages/anecdotes.html">Anecdotes</a>
     <a href="./pages/races.html">Races</a>
@@ -49,5 +52,10 @@
 
   </section>
 </body>
+
+<script src="./scripts/index.js"></script>
+<script>
+  setStatistics()
+</script>
 
 </html>

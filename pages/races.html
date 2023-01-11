@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../styles/main.css">
-  <script src="../scripts/index.js"></script>
 </head>
 
 <body>
@@ -17,18 +16,19 @@
     </div>
     <nav>
       <a href="../index.html">Accueil</a>
-      <a href="./pages/anecdotes.html">Anecdotes</a>
-      <a href="./pages/races.html">Races</a>
+      <a href="./anecdotes.html">Anecdotes</a>
+      <a href="./races.html">Races</a>
     </nav>
     <a href="javascript:void(0);" class="mobile-menu" onclick="showMobileDropdown()">
       <img src='../assets/white-menu.png'>
     </a>
   </header>
 
-  <section id="mobile-menu">
+  <section id="mobile-dropdown">
+    <img onclick="toggleDarkMode" src="../assets/dark-mode.png" alt="">
     <a href="../index.html">Accueil</a>
-    <a href="./pages/anecdotes.html">Anecdotes</a>
-    <a href="./pages/races.html">Races</a>
+    <a href="./anecdotes.html">Anecdotes</a>
+    <a href="./races.html">Races</a>
   </section>
 
   <section id="race-container">
@@ -39,20 +39,25 @@
       </div>
 
       <div class="filters">
-        <select name="" id="country">
+        <select onchange="filterByCountry(event)" name="" id="country">
           <option value="default">Par pays</option>
         </select>
-        <select name="" id="fur">
+        <select onchange="filterByCoat(event)" name="" id="fur">
           <option value="default">Par pelage</option>
         </select>
       </div>
 
-      <div class="race-list"></div>
+      <div class="race-list">
+
+      </div>
     </div>
-    <div id="raceDisplay"></div>
+    <div id="race-display"></div>
   </section>
-
-
 </body>
+
+<script src="../scripts/index.js"></script>
+<script>
+  initRacePage()
+</script>
 
 </html>

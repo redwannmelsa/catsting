@@ -1,0 +1,70 @@
+@mixin dark-mode {
+  background-color: #1D1D1D;
+
+  .statistics-card {
+    background-color: #343434 !important;
+  }
+
+  #mobile-dropdown {
+    a {
+      color: #FFFFFF
+    }
+
+    button {
+      background-color: #1D1D1D;
+      border: 0;
+    }
+
+    img {
+      content: url("../assets/light-mode.png");
+    }
+  }
+
+  #race-container {
+    background-color: #1D1D1D !important;
+
+    #race-selector {
+      background-color: #343434 !important;
+    }
+
+    .fun-data {
+      color: white;
+    }
+  }
+
+}
+
+// $themes: (
+//   default: (card-bg: #1D1D1D,
+//     text: #FFFFFF,
+//     text-secondary: #FF7F57,
+//   ),
+//   dark: (bg: #1D1D1D,
+//     card-bg: #343434,
+//     text: #FFFFFF,
+//     text-secondary: #FF7F57,
+//   ),
+// );
+
+// @mixin themed() {
+
+//   @each $theme,
+//   $map in $themes {
+//     .theme--#{$theme} & {
+//       $theme-map: () !global;
+
+//       @each $key,
+//       $submap in $map {
+//         $value: map-get(map-get($themes, $theme), '#{$key}');
+//         $theme-map: map-merge($theme-map, ($key: $value)) !global;
+//       }
+
+//       @content;
+//       $theme-map: null !global;
+//     }
+//   }
+// }
+
+// @function t($key) {
+//   @return map-get($theme-map, $key);
+// }

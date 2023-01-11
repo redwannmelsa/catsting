@@ -3,7 +3,33 @@
   padding: 0;
   margin: 0;
   font-family: "Roboto";
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.dark-mode {
+  background-color: #1D1D1D;
+}
+.dark-mode .statistics-card {
+  background-color: #343434 !important;
+}
+.dark-mode #mobile-dropdown a {
+  color: #FFFFFF;
+}
+.dark-mode #mobile-dropdown button {
+  background-color: #1D1D1D;
+  border: 0;
+}
+.dark-mode #mobile-dropdown img {
+  content: url("../assets/light-mode.png");
+}
+.dark-mode #race-container {
+  background-color: #1D1D1D !important;
+}
+.dark-mode #race-container #race-selector {
+  background-color: #343434 !important;
+}
+.dark-mode #race-container .fun-data {
+  color: white;
 }
 
 header {
@@ -47,17 +73,26 @@ header .mobile-menu img {
     display: block;
   }
 }
-#mobile-menu {
+#mobile-dropdown {
   display: none;
   height: 100vh;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
 }
-#mobile-menu a {
+#mobile-dropdown a {
   margin-top: 30px;
   text-decoration: none;
   color: black;
+}
+#mobile-dropdown button {
+  position: absolute;
+  left: 30px;
+  background-color: #FFFFFF;
+  border: none;
+}
+#mobile-dropdown img {
+  content: url("../assets/dark-mode.png");
 }
 
 .statistics-container {
@@ -117,19 +152,31 @@ header .mobile-menu img {
 }
 #race-container {
   display: flex;
+  justify-content: center;
+  gap: 41px;
+  max-width: 1600px;
+  margin: auto;
+  margin: 40px;
 }
 #race-container #race-selector {
   background-color: #1D1D1D;
   min-width: 417px;
-  min-height: 765px;
+  max-height: 765px;
+  border-radius: 10px;
   padding: 21px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#race-container #race-selector ::-webkit-scrollbar {
+  display: none;
 }
 #race-container #race-selector .head {
   display: flex;
   gap: 20px;
+  min-height: 20px;
 }
 #race-container #race-selector .head .title {
   color: #FF7F57;
@@ -140,6 +187,7 @@ header .mobile-menu img {
 #race-container #race-selector .filters {
   display: flex;
   gap: 10px;
+  min-height: 20px;
 }
 #race-container #race-selector .filters select {
   width: 203px;
@@ -147,6 +195,28 @@ header .mobile-menu img {
   border: none;
   color: #1D1D1D;
   text-align: center;
+}
+#race-container #race-selector .race-list .race-item {
+  color: white;
+  border-bottom: 2px solid #FF7F57;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+#race-container #race-selector .race-list .race-item .race-content {
+  margin-left: 10px;
+}
+#race-container #race-selector .race-list :hover {
+  background-color: #FF7F57;
+}
+#race-container #race-display {
+  background-color: #1D1D1D;
+  width: 772px;
+  height: 254px;
+  border-radius: 10px;
+  padding: 21px;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

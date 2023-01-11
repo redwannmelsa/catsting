@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import 'themes.scss';
+
 
 $orange: #FF7F57;
 $light: #FFFFFF;
@@ -9,8 +11,13 @@ $grey: #EDEDED;
   padding: 0;
   margin: 0;
   font-family: 'Roboto';
-  overflow: hidden;
+  overflow-x: hidden;
 }
+
+.dark-mode {
+  @include dark-mode
+}
+
 
 header {
   background-color: $orange;
@@ -61,7 +68,7 @@ header {
   }
 }
 
-#mobile-menu {
+#mobile-dropdown {
   display: none;
   height: 100vh;
   flex-direction: column;
@@ -72,6 +79,18 @@ header {
     margin-top: 30px;
     text-decoration: none;
     color: black;
+  }
+
+  button {
+    position: absolute;
+    left: 30px;
+    background-color: #FFFFFF;
+    border: none;
+  }
+
+  img {
+    content: url("../assets/dark-mode.png");
+
   }
 }
 
@@ -142,20 +161,35 @@ header {
 
 #race-container {
   display: flex;
+  justify-content: center;
+  gap: 41px;
+  max-width: 1600px;
+  margin: auto;
+  margin: 40px;
+
 
   #race-selector {
     background-color: $dark;
     min-width: 417px;
-    min-height: 765px;
+    max-height: 765px;
+    border-radius: 10px;
     padding: 21px;
 
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
     .head {
       display: flex;
       gap: 20px;
+      min-height: 20px;
 
       .title {
         color: $orange;
@@ -169,6 +203,7 @@ header {
     .filters {
       display: flex;
       gap: 10px;
+      min-height: 20px;
 
       select {
         width: 203px;
@@ -178,5 +213,34 @@ header {
         text-align: center;
       }
     }
+
+    .race-list {
+
+      .race-item {
+        color: white;
+        border-bottom: 2px solid $orange;
+        height: 40px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .race-content {
+          margin-left: 10px;
+        }
+      }
+
+      :hover {
+        background-color: $orange;
+      }
+    }
+  }
+
+  #race-display {
+    background-color: #1D1D1D;
+    width: 772px;
+    height: 254px;
+    border-radius: 10px;
+    padding: 21px;
+    color: white;
   }
 }
