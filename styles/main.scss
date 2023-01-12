@@ -151,6 +151,59 @@ header {
   }
 }
 
+#many-fun-facts {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5px;
+
+    .display-selection {
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    button {
+      width: 300px;
+      background-color: $orange;
+      color: white;
+      // margin-bottom: 30px;
+      border: none;
+      height: 20px;
+    }
+  }
+
+
+
+  .many-fun-facts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .fun-fact-card {
+      width: 386px;
+      height: 150px;
+      background-color: $grey;
+      border-radius: 10px;
+      text-align: center;
+
+      .title {
+        color: $orange;
+        margin: 5px 0 10px 0;
+      }
+    }
+  }
+
+
+}
+
 #race-container {
   display: flex;
   flex-direction: column;

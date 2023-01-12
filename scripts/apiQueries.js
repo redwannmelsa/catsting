@@ -13,4 +13,9 @@ async function getRandomFunFact() {
   return await res.json()
 }
 
-export { getCatFacts, getCatBreeds, getRandomFunFact }
+async function getAllFunFacts() {
+  const res = await fetch('https://catfact.ninja/facts')
+  return await res.json()
+}
+
+export { getCatFacts, getCatBreeds, getRandomFunFact, getAllFunFacts }
