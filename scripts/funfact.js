@@ -20,7 +20,9 @@ async function showManyFunFacts() {
 }
 
 function changeDisplay(type) {
+  console.log(type)
   const newWidth = displayTypeChecker(type)
+  console.log(newWidth)
 
   document.querySelectorAll('.fun-fact-card').forEach(element => {
     element.style.width = newWidth
@@ -28,9 +30,9 @@ function changeDisplay(type) {
 }
 
 function displayTypeChecker(type) {
-  if (type === 'square') {
+  if (type === 'squares') {
     return '386px'
-  } else if (type = 'fullWidth') {
+  } else if (type === 'fullWidth') {
     return '100%'
   } else {
     throw new Error('unknown argument')
@@ -39,6 +41,4 @@ function displayTypeChecker(type) {
 
 window.showFunFact = showFunFact
 window.showManyFunFacts = showManyFunFacts
-window.displayBars = displayBars
-window.displaySquares = displaySquares
 window.changeDisplay = changeDisplay
